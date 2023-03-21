@@ -1,4 +1,4 @@
-init = (tab) => {
+const init = (tab) => {
     const { id, url } = tab;
     chrome.scripting.executeScript(
         {
@@ -9,6 +9,16 @@ init = (tab) => {
     console.log(`monkey type extension turn on`);
 }
 
-chrome.action.onClicked.addListener(tab => {
-    init(tab)
+// chrome.action.onClicked.addListener(tab => {
+//     init(tab)
+// });
+
+// Add a listener for messages from the popup
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message === 'init') {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            let [tab] = tabs;
+            init(tab);
+        });
+    }
 });
