@@ -4,6 +4,13 @@ superMonkeyType.addEventListener('click', () => {
     chrome.runtime.sendMessage('init');
 });
 
+const turnOffSuperMonkeyType = document.getElementById('turnOffSuperMonkeyType');
+turnOffSuperMonkeyType.addEventListener('click', () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.reload(tabs[0].id);
+    });
+});
+
 const superMonkeyTypeText = document.getElementById('superMonkeyTypeText');
 superMonkeyType.addEventListener('mouseenter', () => {
     superMonkeyTypeText.innerText = "Turn On";
