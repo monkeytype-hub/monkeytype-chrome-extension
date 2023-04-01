@@ -18,6 +18,7 @@
     "permissions": [
         "activeTab",
         "tabs",
-        "scripting"
+        "scripting",
+        "storage"
     ]
 }
