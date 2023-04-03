@@ -18,9 +18,13 @@ You just need to click Turn On and click blank key on keyboard it will help you 
 1. [Install MonkeyType Chrome Extension](https://chrome.google.com/webstore/detail/monkeytype-extension/ekkfdhandgcjdkdlfppjkedoaiiccdaa?hl=en&authuser=0)
 2. Open MonkeyType Chrome Extension move your mouse to `super monketype` and click `Turn On` button
 3. Click lower right corner theme name to choose your favorite theme on MonkeyType
-4. Done! Open [MonkeyType](https://monkeytype.com/) and start to click blank key on keyboard it will help you to typing!
+4. Done! Open [MonkeyType](https://monkeytype.com/) and press `Space` key on keyboard it will help you to typing!
 
 <p align="center">
   <img width="350" alt="CleanShot 2023-04-03 at 12 56 55@2x" src="https://user-images.githubusercontent.com/92412722/229415161-65857ec2-477a-4b0d-b9ae-28a942c29f29.png">
   <img width="351" alt="CleanShot 2023-04-03 at 13 07 18@2x" src="https://user-images.githubusercontent.com/92412722/229416406-4fc81e98-fdd3-4012-8f05-bd71da165f78.png">
 </p>
+
+## Other
+- Extension Icon: Icon made by MonkeyType from [MonkeyType favicon](https://raw.githubusercontent.com/monkeytypegame/monkeytype/master/frontend/static/images/favicon/favicon.ico)
+- Extension Theme: Theme style from [MonkeyType theme list](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/themes/_list.json)
