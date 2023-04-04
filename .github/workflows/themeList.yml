@@ -25,3 +25,14 @@ jobs:
       
       - name: Print json file contents
         run: cat themes.json
+        
+      - name: Update theme list 
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const fs = require('fs');
+            let monkeytypeThemesJson = fs.readFileSync('themes.json');
+            const filePath = '${{ github.workspace }}/theme/themes.json';
+            let themesJson = fs.readFileSync(filePath, 'utf8');
+            console.log(monkeytypeThemesJson)
+            console.log(themesJson)
