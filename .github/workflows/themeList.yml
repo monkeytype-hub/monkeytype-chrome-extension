@@ -31,7 +31,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            let monkeytypeThemesJson = fs.readFileSync('themes.json');
+            let monkeytypeThemesJson = fs.readFileSync('theme/themes.json');
             const filePath = '${{ github.workspace }}/theme/themes.json';
             fs.writeFileSync(filePath, monkeytypeThemesJson);
             
