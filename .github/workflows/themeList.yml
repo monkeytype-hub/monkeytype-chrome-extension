@@ -33,6 +33,8 @@ jobs:
             const fs = require('fs');
             let monkeytypeThemesJson = fs.readFileSync('themes.json');
             const filePath = '${{ github.workspace }}/theme/themes.json';
-            let themesJson = fs.readFileSync(filePath, 'utf8');
-            console.log(monkeytypeThemesJson)
-            console.log(themesJson)
+            fs.writeFileSync(filePath, monkeytypeThemesJson);
+            
+      - name: Print updated theme contents
+        run: |
+          cat /theme/themes.json
