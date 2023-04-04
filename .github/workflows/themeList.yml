@@ -24,7 +24,7 @@ jobs:
         run: curl -o theme/themes.json https://raw.githubusercontent.com/monkeytypegame/monkeytype/master/frontend/static/themes/_list.json
       
       - name: Print json file contents
-        run: cat themes.json
+        run: cat theme/themes.json
         
       - name: Update theme list 
         uses: actions/github-script@v4
