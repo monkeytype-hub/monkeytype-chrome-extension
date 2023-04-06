@@ -23,7 +23,7 @@ jobs:
         run: cat theme/themes.json
         
       - name: Update theme list 
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         with:
           script: |
             const fs = require('fs');
