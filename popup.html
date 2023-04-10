@@ -24,7 +24,7 @@
     <div id="themeListModal" class="hidden">
         <div tabindex="-1"
             class="themeList flex justify-center fixed top-0 left-0 right-0 mt-10 z-50 p-4 overflow-x-hidden overflow-y-auto">
-            <div class="themeList relative opacity-90 border-4 rounded-md overflow-auto"
+            <div class="themeList relative opacity-90 border-4 rounded-md overflow-auto" id="themeListModalContent"
                 style="width: 300px; height: 120px; background-color: var(--bgColor); border-color: var(--textColor);">
                 <div class="gap-1" id="themeList"></div>
             </div>
@@ -118,13 +118,13 @@
                 </svg>
                 <span class="font-bold text-xs">star project</span>
             </a>
-            <div class="flex justify-center items-center gap-1 p-2 cursor-pointer" style="color: var(--textColor);">
+            <div class="flex justify-center items-center gap-1 p-2 cursor-pointer" style="color: var(--textColor);" id="themeSelect">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="var(--textColor)"
                     class="bi bi-palette-fill" viewBox="0 0 16 16">
                     <path
                         d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                 </svg>
-                <span class="font-bold text-xs" id="themeSelect">serika dark</span>
+                <span class="font-bold text-xs" id="themeSelectText">serika dark</span>
             </div>
         </div>
     </div>

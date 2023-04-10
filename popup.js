@@ -47,7 +47,7 @@ function initTheme() {
                     document.documentElement.style.setProperty('--textColor', "#d1d0c5");
                     theme = "serika_dark";
                 }
-                const themeSelect = document.getElementById('themeSelect');
+                const themeSelect = document.getElementById('themeSelectText');
                 themeSelect.innerText = theme.replace("_", " ");
             })
             .catch(error => console.error(error));
@@ -96,14 +96,23 @@ function initThemeList() {
 }
 
 const themeSelect = document.getElementById('themeSelect');
+const themeListModal = document.getElementById('themeListModal');
+const themeListModalContent = document.getElementById('themeListModalContent');
+
 themeSelect.addEventListener('click', () => {
-    const themeListModal = document.getElementById('themeListModal');
     if (themeListModal.classList.contains('hidden')) {
         themeListModal.classList.remove('hidden');
     } else {
         themeListModal.classList.add('hidden');
     }
-});
+}, false);
+
+document.addEventListener('click', (event) => {
+    const clickedElement = event.target;
+    if (!themeListModalContent.contains(clickedElement)) {
+        themeListModal.classList.add('hidden');
+    }
+}, true);
 
 initTheme();
 initThemeList();
