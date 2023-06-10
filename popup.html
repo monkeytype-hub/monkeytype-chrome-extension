@@ -25,15 +25,15 @@
         <div tabindex="-1"
             class="themeList flex justify-center fixed top-0 left-0 right-0 mt-10 z-50 p-4 overflow-x-hidden overflow-y-auto">
             <div class="themeList relative opacity-90 border-4 rounded-md overflow-auto" id="themeListModalContent"
-                style="width: 300px; height: 120px; background-color: var(--bgColor); border-color: var(--textColor);">
-                <div class="gap-1" id="themeList"></div>
+                style="width: 300px; height: 120px; background-color: var(--bgColor); border-color: var(--subAltColor);">
+                <div class="gap-1 font-mono" id="themeList"></div>
             </div>
         </div>
     </div>
     <div class="flex flex-col justify-between border-4"
         style="width: 350px; height: 220px; background-color: var(--bgColor); border-color: var(--mainColor);">
         <div class="flex justify-center items-center pt-3">
-            <span class="font-bold text-3xl tracking-wider" style="color: var(--textColor);">
+            <span class="font-bold text-3xl tracking-wider font-mono" style="color: var(--textColor);">
                 monkeytype
                 <!-- <span class="p-1 border-4 rounded-lg" style="color: #dbba41; border-color: #dbba41;">extension</span> -->
             </span>
@@ -83,13 +83,13 @@
         <div>
             <div class="flex justify-center">
                 <div class="w-10/12 flex justify-center items-center rounded-lg cursor-pointer hover:bg-monkeyHoverWhite"
-                    style="background-color: var(--subColor);" id="superMonkeyType">
-                    <span class="font-bold text-lg tracking-wider py-3 px-3" id="superMonkeyTypeText"
-                        style="color: var(--textColor);">
+                    style="background-color: var(--subAltColor);" id="superMonkeyType">
+                    <span class="font-bold text-lg tracking-wider font-mono py-3 px-3" id="superMonkeyTypeText"
+                        style="color: var(--subColor);">
                         super monkeytype
                     </span>
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="var(--textColor)"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="var(--subColor)"
                             class="bi bi-keyboard-fill" viewBox="0 0 16 16">
                             <path
                                 d="M0 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm13 .25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM2.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 8.75v-.5A.25.25 0 0 0 2.75 8h-.5zM4 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 5 8.75v-.5A.25.25 0 0 0 4.75 8h-.5a.25.25 0 0 0-.25.25zM6.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 7 8.75v-.5A.25.25 0 0 0 6.75 8h-.5zM8 8.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 9 8.75v-.5A.25.25 0 0 0 8.75 8h-.5a.25.25 0 0 0-.25.25zM13.25 8a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zm-3-2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-1.5zm.75 2.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM11.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5zM9 6.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5A.25.25 0 0 0 9.75 6h-.5a.25.25 0 0 0-.25.25zM7.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 8 6.75v-.5A.25.25 0 0 0 7.75 6h-.5zM5 6.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 6 6.75v-.5A.25.25 0 0 0 5.75 6h-.5a.25.25 0 0 0-.25.25zM2.25 6a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h1.5A.25.25 0 0 0 4 6.75v-.5A.25.25 0 0 0 3.75 6h-1.5zM2 10.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25zM4.25 10a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-5.5z" />
@@ -99,32 +99,32 @@
             </div>
             <div class="flex justify-center items-center mt-3">
                 <div class="flex justify-center items-center cursor-pointer gap-1" id="turnOffSuperMonkeyType">
-                    <span class="text-xs font-medium px-1"
-                        style="background-color: var(--subColor); color: var(--textColor); border-radius: 5px;">click</span>
-                    <span class="text-xs font-medium" style="color: var(--textColor);">-</span>
-                    <span class="text-xs font-medium" style="color: var(--textColor);">turn off</span>
+                    <span class="text-xxs font-medium px-2 font-mono tracking-tight"
+                        style="background-color: var(--subColor); color: var(--bgColor); border-radius: 4px;">click</span>
+                    <span class="text-xxs font-medium font-mono tracking-tight px-1" style="color: var(--subColor);">-</span>
+                    <span class="text-xxs font-medium font-mono tracking-tight" style="color: var(--subColor);">turn off</span>
                 </div>
             </div>
         </div>
         <div class="flex justify-around items-end">
             <a href="https://github.com/ridemountainpig/monkeyType-chrome-extension" target="_blank"
-                class="flex justify-center items-center gap-1 p-2" style="color: var(--textColor);">
+                class="flex justify-center items-center gap-1 p-2" style="color: var(--subColor);">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="var(--textColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    stroke="var(--subColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path
                         d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
                     </path>
                     <path d="M9 18c-4.51 2-5-2-7-2"></path>
                 </svg>
-                <span class="font-bold text-xs">star project</span>
+                <span class="font-medium text-xs font-mono tracking-tight" id="githubText">star project</span>
             </a>
-            <div class="flex justify-center items-center gap-1 p-2 cursor-pointer" style="color: var(--textColor);" id="themeSelect">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="var(--textColor)"
-                    class="bi bi-palette-fill" viewBox="0 0 16 16">
+            <div class="flex justify-center items-center gap-1 p-2 cursor-pointer" style="color: var(--subColor);" id="themeSelect">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="var(--subColor)"
+                    class="bi bi-palette-fill pr-1" viewBox="0 0 16 16">
                     <path
                         d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                 </svg>
-                <span class="font-bold text-xs" id="themeSelectText">serika dark</span>
+                <span class="font-medium text-xs font-mono tracking-tight" id="themeSelectText">serika dark</span>
             </div>
         </div>
     </div>

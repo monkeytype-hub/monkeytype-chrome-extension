@@ -36,6 +36,8 @@ function initTheme() {
                         document.documentElement.style.setProperty('--mainColor', data[i].mainColor);
                         document.documentElement.style.setProperty('--subColor', data[i].subColor);
                         document.documentElement.style.setProperty('--textColor', data[i].textColor);
+                        document.documentElement.style.setProperty('--subColor', data[i].subColor);
+                        document.documentElement.style.setProperty('--subAltColor', data[i].subAltColor);
                         check = true;
                         break;
                     }
@@ -45,6 +47,8 @@ function initTheme() {
                     document.documentElement.style.setProperty('--mainColor', "#e2b714");
                     document.documentElement.style.setProperty('--subColor', "#646669");
                     document.documentElement.style.setProperty('--textColor', "#d1d0c5");
+                    document.documentElement.style.setProperty('--subColor', "#646669");
+                    document.documentElement.style.setProperty('--subAltColor', "#2c2e31");
                     theme = "serika_dark";
                 }
                 const themeSelect = document.getElementById('themeSelectText');
@@ -83,7 +87,7 @@ function initThemeList() {
                 const themeElement = document.createElement('div');
                 themeElement.classList.add('flex', 'justify-center', 'items-center', 'text-xs', 'font-medium', 'py-2');
                 themeElement.style.color = `var(--textColor)`;
-                themeElement.innerHTML = `<span class="cursor-pointer">${theme.name.replace("_", " ")}</span>`;
+                themeElement.innerHTML = `<span class="cursor-pointer" style="color: var(--subColor);">${theme.name.replace("_", " ")}</span>`;
                 themeList.appendChild(themeElement);
 
                 themeElement.addEventListener('click', () => {

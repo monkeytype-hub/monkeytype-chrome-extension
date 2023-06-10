@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      letterSpacing: {
+        'xxs': '0.75em',
+      },
+    },
     colors: {
       'monkeyBlack': '#2d2e31',
       'monkeyWhite': '#d1d0c6',
