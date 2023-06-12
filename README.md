@@ -1,6 +1,6 @@
 <p align="center">
-  <img width="351" alt="CleanShot 2023-04-03 at 13 01 12@2x" src="https://user-images.githubusercontent.com/92412722/229415683-c309de81-20d9-4efa-87d2-05ee8a6181d0.png">
-  <img width="351" alt="CleanShot 2023-04-03 at 13 02 39@2x" src="https://user-images.githubusercontent.com/92412722/229415856-d3369dee-847b-4b1a-8757-b850933c1a83.png">
+  <img width="351" alt="CleanShot 2023-04-03 at 13 01 12@2x" src="https://github.com/ridemountainpig/monkeytype-chrome-extension/assets/92412722/727f913f-f2c0-4643-b78e-b20d9a46025c">
+  <img width="351" alt="CleanShot 2023-04-03 at 13 02 39@2x" src="https://github.com/ridemountainpig/monkeytype-chrome-extension/assets/92412722/582879ee-d0e8-4871-a1d5-e4ce7b39d15c">
 </p>
 
 # MonkeyType Chrome Extension
@@ -21,8 +21,8 @@ You just need to click Turn On and click blank key on keyboard it will help you 
 4. Done! Open [MonkeyType](https://monkeytype.com/) and press `Space` key on keyboard it will help you to typing!
 
 <p align="center">
-  <img width="350" alt="CleanShot 2023-04-03 at 12 56 55@2x" src="https://user-images.githubusercontent.com/92412722/229415161-65857ec2-477a-4b0d-b9ae-28a942c29f29.png">
-  <img width="351" alt="CleanShot 2023-04-03 at 13 07 18@2x" src="https://user-images.githubusercontent.com/92412722/229416406-4fc81e98-fdd3-4012-8f05-bd71da165f78.png">
+  <img width="350" alt="CleanShot 2023-04-03 at 12 56 55@2x" src="https://github.com/ridemountainpig/monkeytype-chrome-extension/assets/92412722/0ed45fc4-19a1-4e30-b1b8-f51f4e934b7b">
+  <img width="351" alt="CleanShot 2023-04-03 at 13 07 18@2x" src="https://github.com/ridemountainpig/monkeytype-chrome-extension/assets/92412722/bd8003c4-af54-4c6f-bf12-c4483388f66c">
 </p>
 
 ## Other
