@@ -20,6 +20,30 @@ superMonkeyType.addEventListener('mouseleave', () => {
     superMonkeyTypeText.innerText = "super monkeytype";
 });
 
+const githubIcon = document.getElementById('githubIcon');
+const githubText = document.getElementById('githubText');
+githubText.addEventListener('mouseenter', () => {
+    githubIcon.style.stroke = `var(--textColor)`;
+    githubText.style.color = `var(--textColor)`;
+});
+
+githubText.addEventListener('mouseleave', () => {
+    githubIcon.style.stroke = `var(--subColor)`;
+    githubText.style.color = `var(--subColor)`;
+});
+
+const paletteIcon = document.getElementById('paletteIcon');
+const themeSelectText = document.getElementById('themeSelectText');
+themeSelectText.addEventListener('mouseenter', () => {
+    paletteIcon.style.fill = `var(--textColor)`;
+    themeSelectText.style.color = `var(--textColor)`;
+});
+
+themeSelectText.addEventListener('mouseleave', () => {
+    paletteIcon.style.fill = `var(--subColor)`;
+    themeSelectText.style.color = `var(--subColor)`;
+});
+
 function initTheme() {
     chrome.runtime.sendMessage({ type: 'getData', data: 'theme' }, function (theme) {
         if (theme == undefined) {
@@ -31,7 +55,6 @@ function initTheme() {
                 let check = false;
                 for (let i = 0; i < data.length; i++) {
                     if (data[i].name == theme) {
-                        console.log(data[i])
                         document.documentElement.style.setProperty('--bgColor', data[i].bgColor);
                         document.documentElement.style.setProperty('--mainColor', data[i].mainColor);
                         document.documentElement.style.setProperty('--subColor', data[i].subColor);
@@ -93,6 +116,16 @@ function initThemeList() {
                 themeElement.addEventListener('click', () => {
                     setTheme(theme.name);
                     themeListModal.classList.add('hidden');
+                });
+
+                themeElement.addEventListener('mouseenter', () => {
+                    themeElement.style.backgroundColor = `var(--textColor)`;
+                    themeElement.style.color = `var(--bgColor)`;
+                });
+
+                themeElement.addEventListener('mouseleave', () => {
+                    themeElement.style.backgroundColor = `var(--bgColor)`;
+                    themeElement.style.color = `var(--subColor)`;
                 });
             });
         })
