@@ -22,26 +22,60 @@ superMonkeyType.addEventListener('mouseleave', () => {
 
 const githubIcon = document.getElementById('githubIcon');
 const githubText = document.getElementById('githubText');
+
+const mouseEnterHandlerGithub = (icon, text) => {
+    icon.style.stroke = `var(--textColor)`;
+    text.style.color = `var(--textColor)`;
+};
+
+const mouseLeaveHandlerGithub = (icon, text) => {
+    icon.style.stroke = `var(--subColor)`;
+    text.style.color = `var(--subColor)`;
+};
+
 githubText.addEventListener('mouseenter', () => {
-    githubIcon.style.stroke = `var(--textColor)`;
-    githubText.style.color = `var(--textColor)`;
+    mouseEnterHandlerGithub(githubIcon, githubText);
+});
+
+githubIcon.addEventListener('mouseenter', () => {
+    mouseEnterHandlerGithub(githubIcon, githubText);
 });
 
 githubText.addEventListener('mouseleave', () => {
-    githubIcon.style.stroke = `var(--subColor)`;
-    githubText.style.color = `var(--subColor)`;
+    mouseLeaveHandlerGithub(githubIcon, githubText);
+});
+
+githubIcon.addEventListener('mouseleave', () => {
+    mouseLeaveHandlerGithub(githubIcon, githubText);
 });
 
 const paletteIcon = document.getElementById('paletteIcon');
 const themeSelectText = document.getElementById('themeSelectText');
+
+const mouseEnterHandlerTheme = (icon, text) => {
+    icon.style.fill = `var(--textColor)`;
+    text.style.color = `var(--textColor)`;
+};
+
+const mouseLeaveHandlerTheme = (icon, text) => {
+    icon.style.fill = `var(--subColor)`;
+    text.style.color = `var(--subColor)`;
+};
+
 themeSelectText.addEventListener('mouseenter', () => {
-    paletteIcon.style.fill = `var(--textColor)`;
-    themeSelectText.style.color = `var(--textColor)`;
+    mouseEnterHandlerTheme(paletteIcon, themeSelectText);
 });
 
+paletteIcon.addEventListener('mouseenter', () => {
+    mouseEnterHandlerTheme(paletteIcon, themeSelectText);
+}); 
+
 themeSelectText.addEventListener('mouseleave', () => {
-    paletteIcon.style.fill = `var(--subColor)`;
-    themeSelectText.style.color = `var(--subColor)`;
+    mouseLeaveHandlerTheme(paletteIcon, themeSelectText);
+});
+
+paletteIcon.addEventListener('mouseleave', () => {
+    mouseLeaveHandlerTheme(paletteIcon, themeSelectText);
 });
 
 function initTheme() {
