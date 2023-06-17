@@ -1,7 +1,7 @@
 {
     "name": "MonkeyType Extension",
     "manifest_version": 3,
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Help you type faster and more accurately in MonkeyType",
     "icons": {
         "16": "icon.png",
