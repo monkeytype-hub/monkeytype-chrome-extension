@@ -18,7 +18,7 @@ jobs:
           node-version: '16.x'
         
       - name: Download theme json file from monkeytype
-        run: wget --timeout=180 --tries=3 --waitretry=10 --output-document=monkeytype-data/themes.json https://monkeytype-readme.zeabur.app/mr-command/theme
+        run: wget --timeout=180 --tries=3 --waitretry=10 --output-document=theme/themes.json https://monkeytype-readme.zeabur.app/mr-command/theme
         timeout-minutes: 10
       
       - name: Format JSON data
