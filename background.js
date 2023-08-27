@@ -51,6 +51,9 @@ const getData = (key, callback) => {
         } else {
             console.log('Data retrieved:', result[key]);
             callback(result[key]);
+
+            const iconPath = `./monkeytype-icons/${result[key]}.png`;
+            chrome.action.setIcon({ path: iconPath });
         }
     });
 };
