@@ -180,7 +180,7 @@ themeSelect.addEventListener('click', () => {
 
 document.addEventListener('click', (event) => {
     const clickedElement = event.target;
-    if (!themeListModalContent.contains(clickedElement)) {
+    if (!themeListModalContent.contains(clickedElement) && !themeSelect.contains(clickedElement)) {
         themeListModal.classList.add('hidden');
     }
 }, true);
