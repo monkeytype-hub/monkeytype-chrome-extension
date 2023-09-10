@@ -68,7 +68,7 @@ themeSelectText.addEventListener('mouseenter', () => {
 
 paletteIcon.addEventListener('mouseenter', () => {
     mouseEnterHandlerTheme(paletteIcon, themeSelectText);
-}); 
+});
 
 themeSelectText.addEventListener('mouseleave', () => {
     mouseLeaveHandlerTheme(paletteIcon, themeSelectText);
@@ -109,7 +109,7 @@ function initTheme() {
                     theme = "serika_dark";
                 }
                 const themeSelect = document.getElementById('themeSelectText');
-                themeSelect.innerText = theme.replace("_", " ");
+                themeSelect.innerText = theme.replaceAll("_", " ");
             })
             .catch(error => console.error(error));
     });
