@@ -144,7 +144,7 @@ function initThemeList() {
                 const themeElement = document.createElement('div');
                 themeElement.classList.add('flex', 'justify-center', 'items-center', 'text-xs', 'font-medium', 'py-2');
                 themeElement.style.color = `var(--textColor)`;
-                themeElement.innerHTML = `<span class="cursor-pointer" style="color: var(--subColor);">${theme.name.replace("_", " ")}</span>`;
+                themeElement.innerHTML = `<span class="cursor-pointer" style="color: var(--subColor);">${theme.name.replaceAll("_", " ")}</span>`;
                 themeList.appendChild(themeElement);
 
                 themeElement.addEventListener('click', () => {
@@ -153,8 +153,20 @@ function initThemeList() {
                 });
 
                 themeElement.addEventListener('mouseenter', () => {
+                    chrome.runtime.sendMessage({ type: 'changeIcon', data: { "themeName": theme.name } });
+
+                    document.documentElement.style.setProperty('--bgColor', theme.bgColor);
+                    document.documentElement.style.setProperty('--mainColor', theme.mainColor);
+                    document.documentElement.style.setProperty('--subColor', theme.subColor);
+                    document.documentElement.style.setProperty('--textColor', theme.textColor);
+                    document.documentElement.style.setProperty('--subColor', theme.subColor);
+                    document.documentElement.style.setProperty('--subAltColor', theme.subAltColor);
+
                     themeElement.style.backgroundColor = `var(--textColor)`;
                     themeElement.style.color = `var(--bgColor)`;
+
+                    const themeSelect = document.getElementById('themeSelectText');
+                    themeSelect.innerText = theme.name.replaceAll("_", " ");
                 });
 
                 themeElement.addEventListener('mouseleave', () => {
@@ -175,6 +187,7 @@ themeSelect.addEventListener('click', () => {
         themeListModal.classList.remove('hidden');
     } else {
         themeListModal.classList.add('hidden');
+        initTheme();
     }
 }, false);
 
@@ -182,6 +195,7 @@ document.addEventListener('click', (event) => {
     const clickedElement = event.target;
     if (!themeListModalContent.contains(clickedElement) && !themeSelect.contains(clickedElement)) {
         themeListModal.classList.add('hidden');
+        initTheme();
     }
 }, true);
 

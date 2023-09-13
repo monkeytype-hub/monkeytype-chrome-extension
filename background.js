@@ -31,6 +31,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         });
         return true; // This is necessary to indicate that we will be sending a response asynchronously
     }
+    if (message.type === 'changeIcon') {
+        changeIcon(message.data.themeName);
+    }
 });
 
 const storeData = (data) => {
@@ -57,3 +60,8 @@ const getData = (key, callback) => {
         }
     });
 };
+
+const changeIcon = (themeName) => {
+    const iconPath = `./monkeytype-icons/${themeName}.png`;
+    chrome.action.setIcon({ path: iconPath });
+}
