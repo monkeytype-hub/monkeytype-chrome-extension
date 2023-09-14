@@ -24,5 +24,6 @@ You just need to click Turn On and click blank key on keyboard it will help you 
 <img width="351" alt="CleanShot 2023-04-03 at 13 07 18@2x" src="https://github.com/ridemountainpig/monkeytype-chrome-extension/assets/92412722/bd8003c4-af54-4c6f-bf12-c4483388f66c">
 
 ## Other
-- Extension Icon: Icon made by MonkeyType from [MonkeyType favicon](https://raw.githubusercontent.com/monkeytypegame/monkeytype/master/frontend/static/images/favicon/favicon.ico)
-- Extension Theme: Theme style from [MonkeyType theme list](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/themes/_list.json)
+
+-   Extension Icon: Icon made by MonkeyType from [MonkeyType favicon](https://raw.githubusercontent.com/monkeytypegame/monkeytype/master/frontend/static/images/favicon/favicon.ico)
+-   Extension Theme: Theme style from [MonkeyType theme list](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/themes/_list.json)

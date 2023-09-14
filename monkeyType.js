@@ -1,10 +1,10 @@
-const wordsInput = document.getElementById('wordsInput');
+const wordsInput = document.getElementById("wordsInput");
 
-wordsInput.addEventListener('keypress', function (event) {
+wordsInput.addEventListener("keypress", function (event) {
     if (event.which === 32) {
-        let wordElement = document.querySelector('.word.active');
-        let letters = wordElement.querySelectorAll('letter');
-        let word = '';
+        let wordElement = document.querySelector(".word.active");
+        let letters = wordElement.querySelectorAll("letter");
+        let word = "";
 
         letters.forEach(function (letter) {
             word += letter.textContent;
