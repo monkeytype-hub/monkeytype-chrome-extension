@@ -29,7 +29,7 @@ jobs:
                   python3 -c 'import json; data = json.load(open("theme/themes.json")); json.dump(data, open("theme/themes.json", "w"), indent=2)'
 
             - name: Format code with Prettier
-              run: npx prettier --write ./monkeytype-data/themes.json
+              run: npx prettier --write ./theme/themes.json
             
             - name: Print json file contents
               run: cat theme/themes.json
