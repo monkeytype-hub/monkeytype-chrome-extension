@@ -6,7 +6,7 @@ on:
     # workflow_dispatch:
     push:
         branches:
-            -theme-list-workflow
+            - theme-list-workflow
 
 jobs:
     make-request:
