@@ -1,12 +1,9 @@
 name: Update monkeytype theme json list
 
 on:
-    # schedule:
-    #     - cron: "0 */24 * * *"
-    # workflow_dispatch:
-    push:
-        branches:
-            - theme-list-workflow
+    schedule:
+        - cron: "0 */24 * * *"
+    workflow_dispatch:
 
 jobs:
     make-request:
@@ -65,5 +62,5 @@ jobs:
             - name: Push changes
               uses: ad-m/github-push-action@master
               with:
-                  branch: theme-list-workflow
+                  branch: master
                   github_token: ${{ secrets.GITHUB_TOKEN }}
