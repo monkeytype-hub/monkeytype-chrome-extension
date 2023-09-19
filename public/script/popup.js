@@ -87,7 +87,7 @@ function initTheme() {
             if (theme == undefined) {
                 theme = "serika_dark";
             }
-            fetch("./theme/themes.json")
+            fetch("../../theme/themes.json")
                 .then((response) => response.json())
                 .then((data) => {
                     let check = false;
@@ -163,7 +163,7 @@ function setTheme(theme) {
 }
 
 function initThemeList() {
-    fetch("./theme/themes.json")
+    fetch("../../theme/themes.json")
         .then((response) => response.json())
         .then((data) => {
             data = data.sort((a, b) => {

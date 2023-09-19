@@ -2,7 +2,7 @@ const init = (tab) => {
     const { id, url } = tab;
     chrome.scripting.executeScript({
         target: { tabId: id, allFrames: true },
-        files: ["monkeyType.js"],
+        files: ["public/script/monkeytype.js"],
     });
     console.log(`monkey type extension turn on`);
 };
@@ -53,13 +53,13 @@ const getData = (key, callback) => {
             console.log("Data retrieved:", result[key]);
             callback(result[key]);
 
-            const iconPath = `./monkeytype-icons/${result[key]}.png`;
+            const iconPath = `../../monkeytype-icons/${result[key]}.png`;
             chrome.action.setIcon({ path: iconPath });
         }
     });
 };
 
 const changeIcon = (themeName) => {
-    const iconPath = `./monkeytype-icons/${themeName}.png`;
+    const iconPath = `../../monkeytype-icons/${themeName}.png`;
     chrome.action.setIcon({ path: iconPath });
 };

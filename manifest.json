@@ -14,10 +14,10 @@
             "48": "monkeytype-icons/serika_dark.png",
             "128": "monkeytype-icons/serika_dark.png"
         },
-        "default_popup": "popup.html"
+        "default_popup": "public/view/popup.html"
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "public/script/background.js"
     },
     "permissions": ["activeTab", "scripting", "storage"]
 }
