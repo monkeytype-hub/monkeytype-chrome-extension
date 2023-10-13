@@ -13,7 +13,7 @@ const init = (tab) => {
 
 // Add a listener for messages from the popup
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message === "init") {
+    if (message.type === "init") {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             let [tab] = tabs;
             init(tab);
@@ -53,6 +53,7 @@ const getData = (key, callback) => {
             console.log("Data retrieved:", result[key]);
             callback(result[key]);
 
+            if (result[key] === undefined) return;
             const iconPath = `../../monkeytype-icons/${result[key]}.png`;
             chrome.action.setIcon({ path: iconPath });
         }
@@ -60,6 +61,7 @@ const getData = (key, callback) => {
 };
 
 const changeIcon = (themeName) => {
+    if (themeName === undefined) return;
     const iconPath = `../../monkeytype-icons/${themeName}.png`;
     chrome.action.setIcon({ path: iconPath });
 };

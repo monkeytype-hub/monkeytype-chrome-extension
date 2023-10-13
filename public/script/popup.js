@@ -1,7 +1,7 @@
 const superMonkeyType = document.getElementById("superMonkeyType");
 superMonkeyType.addEventListener("click", () => {
     // Send a message to the background script to call the init function
-    chrome.runtime.sendMessage("init");
+    chrome.runtime.sendMessage({ type: "init" });
 });
 
 const turnOffSuperMonkeyType = document.getElementById(
