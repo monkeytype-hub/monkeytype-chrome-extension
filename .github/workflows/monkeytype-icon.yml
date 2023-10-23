@@ -38,5 +38,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-            branch: monkeytype-icon-workflow
+            branch: monkeytype-icon
             github_token: ${{ secrets.GITHUB_TOKEN }}
