@@ -7,7 +7,7 @@ async function downloadMonkeyTypeIcons() {
         const data = JSON.parse(response);
 
         const downloadPromises = data.map(async (item) => {
-            const iconUrl = `https://github.com/ridemountainpig/monkeytype-icon/blob/master/monkeytype-icon/${item.name}.png?raw=true`;
+            const iconUrl = `https://github.com/ridemountainpig/monkeytype-icon/blob/master/monkeytype-icon/png/${item.name}.png?raw=true`;
             const downloadPath = `monkeytype-icons/${item.name}.png`;
 
             const imageResponse = await axios({
