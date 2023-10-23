@@ -1,9 +1,8 @@
 name: Download monkeytype icon
 
 on:
-  push:
-    branches:    
-      - monkeytype-icon
+  schedule:
+        - cron: "0 */24 * * *"
   workflow_dispatch:
     
 jobs:
@@ -38,5 +37,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-            branch: monkeytype-icon
+            branch: master
             github_token: ${{ secrets.GITHUB_TOKEN }}
