@@ -1,0 +1,254 @@
+// ==UserScript==
+// @name         Hiển thị tu vi Khoáng Mạch
+// @namespace    http://tampermonkey.net/
+// @version      0.7
+// @description  Hiển thị mycred_points dưới Khai Thác, bypass DevTools
+// @author       You
+// @match        *://hoathinh3d.gg/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Hàm định dạng số
+    function formatNumber(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // Hàm thêm mycred_points vào DOM
+    function addMyCredPoints() {
+        // Thử nhiều class có thể
+        const possibleClasses = ['user-row', 'user_row', 'user-item', 'player-row', 'user'];
+        let userRows = [];
+        for (const className of possibleClasses) {
+            userRows = document.querySelectorAll(`#user-list .${className}`);
+            if (userRows.length) {
+                console.log('[Tampermonkey] Đã tìm thấy user rows với class:', className);
+                break;
+            }
+        }
+
+        if (!userRows.length) {
+            console.log('[Tampermonkey] Không tìm thấy user rows trong #user-list. HTML:', document.getElementById('user-list').innerHTML.slice(0, 200));
+            return;
+        }
+
+        userRows.forEach(row => {
+            const userId = row.getAttribute('data-user-id');
+            const user = window.users && window.users.length ? window.users.find(u => u.id == userId) : null;
+            const khaiThacElement = row.querySelector('.khai-thac');
+            if (!khaiThacElement) {
+                console.log('[Tampermonkey] Không tìm thấy khai-thac trong user-row:', userId);
+                return;
+            }
+
+            const existingPoints = row.querySelector('.mycred-points');
+            if (existingPoints) return;
+
+            if (user && user.mycred_points !== undefined) {
+                const pointsElement = document.createElement('p');
+                pointsElement.innerHTML = `<i class="fas fa-coins"></i> Tu vi: <span class="mycred-points">${formatNumber(user.mycred_points)}</span>`;
+                pointsElement.style.cssText = 'color: #FFD700; font-weight: bold; margin-top: 5px; margin-bottom: 5px;';
+                khaiThacElement.parentElement.insertAdjacentElement('afterend', pointsElement);
+            } else {
+                console.log('[Tampermonkey] Không tìm thấy user hoặc mycred_points cho ID:', userId);
+            }
+        });
+    }
+
+    // Chặn XMLHttpRequest để lấy dữ liệu users
+    function interceptAjax() {
+        const originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url) {
+            if (url.includes('hh3d-ajax.php') && method === 'POST') {
+                this.addEventListener('load', function() {
+                    try {
+                        const response = JSON.parse(this.responseText);
+                        if (response.success && response.data.users) {
+                            console.log('[Tampermonkey] Đã lấy được dữ liệu users từ AJAX:', response.data.users);
+                            window.users = response.data.users;
+                        }
+                    } catch (e) {
+                        console.error('[Tampermonkey] Lỗi khi parse AJAX response:', e);
+                    }
+                });
+            }
+            return originalOpen.apply(this, arguments);
+        };
+    }
+
+    // Quan sát thay đổi trong #user-list
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach(mutation => {
+            if (mutation.type === 'childList' && mutation.target.id === 'user-list') {
+                console.log('[Tampermonkey] Phát hiện thay đổi trong #user-list');
+                // Chờ window.users có dữ liệu
+                let attempts = 0;
+                const maxAttempts = 20;
+                const checkUsersInterval = setInterval(() => {
+                    if (window.users && window.users.length) {
+                        console.log('[Tampermonkey] Đã tìm thấy window.users:', window.users);
+                        addMyCredPoints();
+                        clearInterval(checkUsersInterval);
+                    } else if (attempts >= maxAttempts) {
+                        console.log('[Tampermonkey] Hết thời gian chờ window.users');
+                        clearInterval(checkUsersInterval);
+                    }
+                    attempts++;
+                }, 10);
+            }
+        });
+    });
+
+    // Bắt đầu quan sát #user-list
+    const userList = document.getElementById('user-list');
+    if (userList) {
+        observer.observe(userList, { childList: true, subtree: true });
+        console.log('[Tampermonkey] Đã bắt đầu quan sát #user-list');
+    } else {
+        console.log('[Tampermonkey] Không tìm thấy #user-list, thử lại sau 1s');
+        setTimeout(() => {
+            const userListRetry = document.getElementById('user-list');
+            if (userListRetry) {
+                observer.observe(userListRetry, { childList: true, subtree: true });
+                console.log('[Tampermonkey] Đã tìm thấy #user-list sau khi thử lại');
+            }
+        }, 1000);
+    }
+    interceptAjax();
+})();// ==UserScript==
+// @name         New Userscript
+// @namespace    http://tampermonkey.net/
+// @version      2025-06-18
+// @description  try to take over the world!
+// @author       You
+// @match        https://www.tampermonkey.net/
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=tampermonkey.net
+// @grant        none
+// ==/UserScript==
+
+(function() {// ==UserScript==
+// @name         Hiển thị tu vi Khoáng Mạch
+// @namespace    http://tampermonkey.net/
+// @version      0.7
+// @description  Hiển thị mycred_points dưới Khai Thác, bypass DevTools
+// @author       You
+// @match        *://hoathinh3d.gg/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Hàm định dạng số
+    function formatNumber(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // Hàm thêm mycred_points vào DOM
+    function addMyCredPoints() {
+        // Thử nhiều class có thể
+        const possibleClasses = ['user-row', 'user_row', 'user-item', 'player-row', 'user'];
+        let userRows = [];
+        for (const className of possibleClasses) {
+            userRows = document.querySelectorAll(`#user-list .${className}`);
+            if (userRows.length) {
+                console.log('[Tampermonkey] Đã tìm thấy user rows với class:', className);
+                break;
+            }
+        }
+
+        if (!userRows.length) {
+            console.log('[Tampermonkey] Không tìm thấy user rows trong #user-list. HTML:', document.getElementById('user-list').innerHTML.slice(0, 200));
+            return;
+        }
+
+        userRows.forEach(row => {
+            const userId = row.getAttribute('data-user-id');
+            const user = window.users && window.users.length ? window.users.find(u => u.id == userId) : null;
+            const khaiThacElement = row.querySelector('.khai-thac');
+            if (!khaiThacElement) {
+                console.log('[Tampermonkey] Không tìm thấy khai-thac trong user-row:', userId);
+                return;
+            }
+
+            const existingPoints = row.querySelector('.mycred-points');
+            if (existingPoints) return;
+
+            if (user && user.mycred_points !== undefined) {
+                const pointsElement = document.createElement('p');
+                pointsElement.innerHTML = `<i class="fas fa-coins"></i> Tu vi: <span class="mycred-points">${formatNumber(user.mycred_points)}</span>`;
+                pointsElement.style.cssText = 'color: #FFD700; font-weight: bold; margin-top: 5px; margin-bottom: 5px;';
+                khaiThacElement.parentElement.insertAdjacentElement('afterend', pointsElement);
+            } else {
+                console.log('[Tampermonkey] Không tìm thấy user hoặc mycred_points cho ID:', userId);
+            }
+        });
+    }
+
+    // Chặn XMLHttpRequest để lấy dữ liệu users
+    function interceptAjax() {
+        const originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url) {
+            if (url.includes('hh3d-ajax.php') && method === 'POST') {
+                this.addEventListener('load', function() {
+                    try {
+                        const response = JSON.parse(this.responseText);
+                        if (response.success && response.data.users) {
+                            console.log('[Tampermonkey] Đã lấy được dữ liệu users từ AJAX:', response.data.users);
+                            window.users = response.data.users;
+                        }
+                    } catch (e) {
+                        console.error('[Tampermonkey] Lỗi khi parse AJAX response:', e);
+                    }
+                });
+            }
+            return originalOpen.apply(this, arguments);
+        };
+    }
+
+    // Quan sát thay đổi trong #user-list
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach(mutation => {
+            if (mutation.type === 'childList' && mutation.target.id === 'user-list') {
+                console.log('[Tampermonkey] Phát hiện thay đổi trong #user-list');
+                // Chờ window.users có dữ liệu
+                let attempts = 0;
+                const maxAttempts = 20;
+                const checkUsersInterval = setInterval(() => {
+                    if (window.users && window.users.length) {
+                        console.log('[Tampermonkey] Đã tìm thấy window.users:', window.users);
+                        addMyCredPoints();
+                        clearInterval(checkUsersInterval);
+                    } else if (attempts >= maxAttempts) {
+                        console.log('[Tampermonkey] Hết thời gian chờ window.users');
+                        clearInterval(checkUsersInterval);
+                    }
+                    attempts++;
+                }, 10);
+            }
+        });
+    });
+
+    // Bắt đầu quan sát #user-list
+    const userList = document.getElementById('user-list');
+    if (userList) {
+        observer.observe(userList, { childList: true, subtree: true });
+        console.log('[Tampermonkey] Đã bắt đầu quan sát #user-list');
+    } else {
+        console.log('[Tampermonkey] Không tìm thấy #user-list, thử lại sau 1s');
+        setTimeout(() => {
+            const userListRetry = document.getElementById('user-list');
+            if (userListRetry) {
+                observer.observe(userListRetry, { childList: true, subtree: true });
+                console.log('[Tampermonkey] Đã tìm thấy #user-list sau khi thử lại');
+            }
+        }, 1000);
+    }
+    interceptAjax();
+})();
+    'use strict';
+
+    // Your code here...
+})();
